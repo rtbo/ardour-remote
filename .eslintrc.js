@@ -5,6 +5,7 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
   extends: [
+    'plugin:vue/essential',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
@@ -15,25 +16,25 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,
   },
-  plugins: ["import"],
-  ignorePatterns: ["*.js"],
+  plugins: ['import'],
+  ignorePatterns: ['*.js'],
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "import/order": [
-      "error",
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'import/order': [
+      'error',
       {
-        groups: ["builtin", "external", "parent", "sibling", "index"],
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
         pathGroups: [
           {
-            pattern: "@/**",
-            group: "parent",
-            position: "before",
+            pattern: '@/**',
+            group: 'parent',
+            position: 'before',
           },
         ],
-        pathGroupsExcludedImportTypes: ["builtin"],
+        pathGroupsExcludedImportTypes: ['builtin'],
         alphabetize: {
-          order: "asc",
+          order: 'asc',
         },
       },
     ],
@@ -41,12 +42,12 @@ module.exports = {
   overrides: [
     {
       files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)",
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
       ],
       env: {
         mocha: true,
       },
     },
   ],
-};
+}
